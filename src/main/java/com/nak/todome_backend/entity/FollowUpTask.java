@@ -2,6 +2,10 @@ package com.nak.todome_backend.entity;
 
 import java.time.LocalDate;
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -20,13 +24,16 @@ public class FollowUpTask {
 
     @ManyToOne
     @JoinColumn(name = "task_id", nullable = false)
+    @JsonBackReference
     private Task originalTask;
 
     @ManyToOne
     @JoinColumn(name = "follow_up_task_id", nullable = true)
+    @JsonBackReference
     private FollowUpTask parentFollowUpTask;
 
     @OneToMany(mappedBy = "parentFollowUpTask", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<FollowUpTask> childFollowUpTasks;
 
     private String followUpDetails;
