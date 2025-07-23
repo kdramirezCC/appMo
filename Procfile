@@ -1,1 +1,1 @@
-web: java -jar target/todome-backend-0.0.1-SNAPSHOT.jar
+web: java -jar target/amotask-backend-0.0.1-SNAPSHOT.jar

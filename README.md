@@ -1,4 +1,4 @@
-# Todome Backend
+# amotask Backend
 
 A Spring Boot backend API for managing tasks and follow-up tasks. This project connects to a PostgreSQL database and provides endpoints for creating, updating, retrieving, and deleting tasks, as well as managing nested follow-up tasks.
 
@@ -27,8 +27,8 @@ A Spring Boot backend API for managing tasks and follow-up tasks. This project c
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/NarjeeshTP/todome-backend.git
-    cd todome-backend
+    git clone https://github.com/NarjeeshTP/amotask-backend.git
+    cd amotask-backend
     ```
 
 2. Set up the PostgreSQL database:

@@ -1,4 +1,4 @@
-package com.nak.todome_backend.exception;
+package com.nak.amotask_backend.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

@@ -1,6 +1,6 @@
-package com.nak.todome_backend.repository;
+package com.nak.amotask_backend.repository;
 
-import com.nak.todome_backend.entity.Task;
+import com.nak.amotask_backend.entity.Task;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

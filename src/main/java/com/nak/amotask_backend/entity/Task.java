@@ -1,4 +1,4 @@
-package com.nak.todome_backend.entity;
+package com.nak.amotask_backend.entity;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -22,13 +22,11 @@ public class Task {
     private String title;
     private String description;
     private LocalDate dueDate;
-    private String status;
+    private boolean completed;
 
-    @OneToMany(mappedBy = "originalTask", cascade = CascadeType.ALL)
-    @JsonManagedReference
-    private List<FollowUpTask> followUpTasks;
-
+  
     // Getters and Setters
+
 
     public Long getId() {
         return id;
@@ -62,19 +60,15 @@ public class Task {
         this.dueDate = dueDate;
     }
 
-    public String getStatus() {
-        return status;
+    
+    public boolean isCompleted() {
+        return completed;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setCompleted(boolean completed) {
+        this.completed = completed;
     }
 
-    public List<FollowUpTask> getFollowUpTasks() {
-        return followUpTasks;
-    }
+  
 
-    public void setFollowUpTasks(List<FollowUpTask> followUpTasks) {
-        this.followUpTasks = followUpTasks;
-    }
 }
