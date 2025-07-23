@@ -1,11 +1,10 @@
 # amotask Backend
 
-A Spring Boot backend API for managing tasks and follow-up tasks. This project connects to a PostgreSQL database and provides endpoints for creating, updating, retrieving, and deleting tasks, as well as managing nested follow-up tasks.
+A Spring Boot backend API for managing basic day-to-day tasks. This project connects to a PostgreSQL database and provides endpoints for creating, updating, retrieving, and deleting tasks, as well as managing nested follow-up tasks.
 
 ## Features
 
 - **CRUD for Tasks**: Create, retrieve, update, and delete tasks.
-- **Follow-Up Tasks**: Support for creating follow-up tasks and nested follow-up tasks for each task.
 - **Mark as Complete**: Endpoints to mark both tasks and follow-up tasks as completed.
 
 ## Technologies Used
@@ -18,23 +17,11 @@ A Spring Boot backend API for managing tasks and follow-up tasks. This project c
 
 ### Prerequisites
 
-- Java 11 or later
-- PostgreSQL (with a database named `taskdb`)
+- Java 21 or later
+- PostgreSQL
 - Maven
 
 ### Installation
-
-1. Clone the repository:
-
-    ```bash
-    git clone https://github.com/NarjeeshTP/amotask-backend.git
-    cd amotask-backend
-    ```
-
-2. Set up the PostgreSQL database:
-    - Ensure PostgreSQL is running.
-    - Create a database called `taskdb` (or modify `application.properties` accordingly).
-    - Update the `spring.datasource.username` and `spring.datasource.password` in `src/main/resources/application.properties` with your PostgreSQL credentials.
 
 3. Run the application:
 
@@ -52,12 +39,7 @@ A Spring Boot backend API for managing tasks and follow-up tasks. This project c
 | `PUT`    | `/tasks/{id}`                  | Update a task by ID                      |
 | `DELETE` | `/tasks/{id}`                  | Delete a task by ID                      |
 | `PUT`    | `/tasks/{id}/complete`         | Mark a task as complete                  |
-| `POST`   | `/tasks/{taskId}/follow-up`    | Create a follow-up task                  |
-| `GET`    | `/tasks/{id}/follow-up`        | Get follow-up tasks for a specific task  |
-| `PUT`    | `/follow-up/{id}`              | Update a follow-up task                  |
-| `DELETE` | `/follow-up/{id}`              | Delete a follow-up task                  |
-| `POST`   | `/follow-up/{followUpTaskId}/follow-up` | Create a nested follow-up task |
-| `GET`    | `/follow-up/{id}/follow-ups`   | Get nested follow-up tasks               |
+
 
 ### Sample Request and Response
 
