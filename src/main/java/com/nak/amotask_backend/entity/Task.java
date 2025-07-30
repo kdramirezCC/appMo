@@ -1,16 +1,16 @@
 package com.nak.amotask_backend.entity;
 
 import java.time.LocalDate;
-import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.nak.amotask_backend.model.Priority;
 
-import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 
 @Entity
 public class Task {
@@ -24,9 +24,12 @@ public class Task {
     private LocalDate dueDate;
     private boolean completed;
 
-  
-    // Getters and Setters
+    // ponemos la enumeración de prioridad el JP se encarga de modificar la DB
+    @Enumerated(EnumType.STRING)
+    @Column (name = "priority", nullable = false, columnDefinition = "priority")
+    private Priority priority;
 
+    // Getters and Setters
 
     public Long getId() {
         return id;
@@ -60,7 +63,6 @@ public class Task {
         this.dueDate = dueDate;
     }
 
-    
     public boolean isCompleted() {
         return completed;
     }
@@ -69,6 +71,12 @@ public class Task {
         this.completed = completed;
     }
 
-  
+    public Priority getPriority() {
+        return priority;
+    }
+
+    public void setPriority(Priority priority) {
+        this.priority = priority;
+    }
 
 }
